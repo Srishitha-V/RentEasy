@@ -47,27 +47,3 @@ function confirmBooking(){
 
     window.location.href="confirm.html";
 }
-
-/* DISPLAY ORDERS */
-if(document.getElementById("ordersContainer")){
-
-    let orders = JSON.parse(localStorage.getItem("orders")) || [];
-    let container = document.getElementById("ordersContainer");
-
-    if(orders.length === 0){
-        container.innerHTML = "<p style='text-align:center;'>No orders placed yet.</p>";
-    } else {
-        orders.forEach(order => {
-            container.innerHTML += `
-                <div class="order-card">
-                    <h3>${order.item}</h3>
-                    <p><strong>Name:</strong> ${order.name}</p>
-                    <p><strong>Date:</strong> ${order.date}</p>
-                    <p><strong>Days:</strong> ${order.days}</p>
-                    <p><strong>Payment:</strong> ${order.payment}</p>
-                    <p><strong>Total:</strong> ₹${order.total}</p>
-                </div>
-            `;
-        });
-    }
-}
