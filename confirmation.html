@@ -9,10 +9,14 @@
 <div class="success-box">
     <h1>🎉 Order Successful!</h1>
     <p>Thanks for booking with RentEasy 💜</p>
-    <p>Your item has been reserved successfully.</p>
-
-    <a href="items.html" class="back-btn">Back to Items</a>
+    <p>Redirecting to homepage...</p>
 </div>
+
+<script>
+    setTimeout(function(){
+        window.location.href = "items.html";
+    }, 3000);  // 3 seconds redirect
+</script>
 
 </body>
 </html>
