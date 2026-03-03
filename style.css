@@ -1,55 +1,62 @@
 body{
-    font-family: Arial;
     margin:0;
-    background:#f4f6f9;
+    font-family: Arial;
 }
 
-.center{
-    text-align:center;
-}
-
-.login-body{
+.title-page{
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#667eea,#764ba2);
+    background:linear-gradient(135deg,#ff6a00,#ee0979);
 }
 
-.login-container{
+.title-container{
     background:white;
     padding:40px;
-    border-radius:10px;
+    border-radius:20px;
     text-align:center;
-    width:300px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-input, select{
+.title-container input{
+    display:block;
     width:100%;
     padding:10px;
     margin:10px 0;
 }
 
-button{
-    padding:10px;
-    background:#667eea;
+.title-container button{
+    background:#ee0979;
     color:white;
+    padding:10px 20px;
     border:none;
     cursor:pointer;
 }
 
+.items-page{
+    background:linear-gradient(135deg,#43cea2,#185a9d);
+    padding:30px;
+}
+
+.page-title{
+    text-align:center;
+    color:white;
+}
+
 .items-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
-    padding:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:30px;
 }
 
 .item-card{
     background:white;
+    border-radius:15px;
     padding:15px;
     text-align:center;
-    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 .item-card img{
@@ -58,23 +65,41 @@ button{
     object-fit:contain;
 }
 
-.booking-container{
-    width:300px;
-    margin:auto;
-    padding:20px;
-    background:white;
-}
-
-.order-card{
-    background:white;
-    margin:15px;
-    padding:15px;
-}
-
-footer{
-    text-align:center;
-    padding:10px;
-    background:#333;
+.item-card button{
+    background:#185a9d;
     color:white;
-    margin-top:20px;
+    border:none;
+    padding:8px 15px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.booking-page{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.booking-box{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    width:300px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.booking-box input, select{
+    width:100%;
+    padding:8px;
+    margin:8px 0;
+}
+
+.booking-box button{
+    width:100%;
+    padding:10px;
+    background:#ff6a00;
+    color:white;
+    border:none;
 }

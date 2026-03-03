@@ -17,42 +17,22 @@ if(document.getElementById("itemName")){
 }
 
 function confirmBooking(){
+
     let name = document.getElementById("customerName").value;
+    let date = document.getElementById("bookingDate").value;
     let days = document.getElementById("days").value;
     let payment = document.getElementById("paymentMethod").value;
+
     let item = localStorage.getItem("itemName");
     let price = localStorage.getItem("itemPrice");
-
     let total = days * price;
 
-    let order = {
-        name,
-        item,
-        days,
-        payment,
-        total
-    };
+    let order = { name, item, date, days, payment, total };
 
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     orders.push(order);
     localStorage.setItem("orders", JSON.stringify(orders));
 
-    window.location.href="confirm.html";
-}
-
-if(document.getElementById("bookingList")){
-    let orders = JSON.parse(localStorage.getItem("orders")) || [];
-    let list = document.getElementById("bookingList");
-
-    orders.forEach(order => {
-        list.innerHTML += `
-            <div class="order-card">
-                <h3>${order.name}</h3>
-                <p>Item: ${order.item}</p>
-                <p>Days: ${order.days}</p>
-                <p>Payment: ${order.payment}</p>
-                <p>Total: ₹${order.total}</p>
-            </div>
-        `;
-    });
+    alert("Booking Successful!");
+    window.location.href="items.html";   // FIXED
 }
