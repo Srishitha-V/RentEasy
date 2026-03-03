@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Booking Details</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="booking-page">
 
-<div class="booking-container">
+<div class="booking-box">
 
-    <h1>📦 Booking Details</h1>
+    <h1>Booking Details</h1>
 
-    <div class="booking-info">
+    <div class="item-info">
         <p id="itemName"></p>
         <p id="itemPrice"></p>
     </div>
 
-    <div class="form-group">
-        <input type="text" id="customerName" placeholder="Enter Your Name">
-    </div>
+    <input type="text" id="customerName" placeholder="Enter Your Name">
 
-    <div class="form-group">
-        <label>Select Booking Date</label>
-        <input type="date" id="bookingDate">
-    </div>
+    <label>Select Booking Date</label>
+    <input type="date" id="bookingDate">
 
-    <div class="form-group">
-        <input type="number" id="days" placeholder="Number of Days">
-    </div>
+    <input type="number" id="days" placeholder="Number of Days">
 
-    <div class="form-group">
-        <select id="paymentMethod">
-            <option value="">Select Payment Method</option>
-            <option>UPI</option>
-            <option>Credit Card</option>
-            <option>Cash</option>
-        </select>
-    </div>
+    <select id="paymentMethod">
+        <option value="">Select Payment Method</option>
+        <option>UPI</option>
+        <option>Credit Card</option>
+        <option>Cash</option>
+    </select>
 
-    <button onclick="confirmBooking()" class="confirm-btn">
-        Confirm Booking
-    </button>
+    <button onclick="confirmBooking()">Confirm Booking</button>
+
+    <p id="successMessage" class="success-message"></p>
 
 </div>
 
