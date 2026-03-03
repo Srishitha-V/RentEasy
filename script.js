@@ -23,16 +23,27 @@ function confirmBooking(){
     let days = document.getElementById("days").value;
     let payment = document.getElementById("paymentMethod").value;
 
+    if(name === "" || date === "" || days === "" || payment === ""){
+        alert("Please fill all details!");
+        return;
+    }
+
     let item = localStorage.getItem("itemName");
     let price = localStorage.getItem("itemPrice");
     let total = days * price;
 
-    let order = { name, item, date, days, payment, total };
+    let order = {
+        name,
+        item,
+        date,
+        days,
+        payment,
+        total
+    };
 
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     orders.push(order);
     localStorage.setItem("orders", JSON.stringify(orders));
 
-    alert("Booking Successful!");
-    window.location.href="items.html";   // FIXED
+    window.location.href="confirm.html";
 }
