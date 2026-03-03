@@ -6,44 +6,42 @@
 </head>
 <body>
 
-<nav>
-    <h2>RentEasy</h2>
-    <a href="index.html">Home</a>
-</nav>
+<header>
+    <h1>Available Items</h1>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
 
-<h1 class="center">Available Items</h1>
+<div class="products">
 
-<div class="items-container">
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
+        <h3>Scientific Calculator</h3>
+        <p>₹20/day</p>
+        <button onclick="selectItem('Scientific Calculator',20)">Rent</button>
+    </div>
 
-<div class="card">
-    <h3>Scientific Calculator</h3>
-    <p>₹20/day</p>
-    <button onclick="rentItem('Scientific Calculator',20)">Rent Now</button>
-</div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1581091870627-3c3d4e7d8a6b">
+        <h3>White Lab Coat</h3>
+        <p>₹30/day</p>
+        <button onclick="selectItem('White Lab Coat',30)">Rent</button>
+    </div>
 
-<div class="card">
-    <h3>Lab Coat (Apron)</h3>
-    <p>₹15/day</p>
-    <button onclick="rentItem('Lab Coat',15)">Rent Now</button>
-</div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+        <h3>Badminton Racket</h3>
+        <p>₹35/day</p>
+        <button onclick="selectItem('Badminton Racket',35)">Rent</button>
+    </div>
 
-<div class="card">
-    <h3>Drafter</h3>
-    <p>₹25/day</p>
-    <button onclick="rentItem('Drafter',25)">Rent Now</button>
-</div>
-
-<div class="card">
-    <h3>Badminton Racket</h3>
-    <p>₹30/day</p>
-    <button onclick="rentItem('Badminton Racket',30)">Rent Now</button>
-</div>
-
-<div class="card">
-    <h3>Cricket Bat</h3>
-    <p>₹40/day</p>
-    <button onclick="rentItem('Cricket Bat',40)">Rent Now</button>
-</div>
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1606925797303-5d65d5d3f5e5">
+        <h3>Cricket Bat</h3>
+        <p>₹50/day</p>
+        <button onclick="selectItem('Cricket Bat',50)">Rent</button>
+    </div>
 
 </div>
 
