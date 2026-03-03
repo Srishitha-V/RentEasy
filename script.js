@@ -1,42 +1,58 @@
-function selectItem(name, price) {
-    localStorage.setItem("item", name);
-    localStorage.setItem("price", price);
-    window.location.href = "booking.html";
+function login(){
+    window.location.href="items.html";
 }
 
-function placeOrder() {
-    const username = document.getElementById("username").value;
+function bookItem(name, price){
+    localStorage.setItem("itemName", name);
+    localStorage.setItem("itemPrice", price);
+    window.location.href="booking.html";
+}
 
-    if(username === "") {
-        alert("Please enter your name");
-        return;
-    }
+if(document.getElementById("itemName")){
+    document.getElementById("itemName").innerText =
+        "Item: " + localStorage.getItem("itemName");
 
-    const order = {
-        user: username,
-        item: localStorage.getItem("item"),
-        price: localStorage.getItem("price"),
-        date: new Date().toLocaleString()
+    document.getElementById("itemPrice").innerText =
+        "Price per day: ₹" + localStorage.getItem("itemPrice");
+}
+
+function confirmBooking(){
+    let name = document.getElementById("customerName").value;
+    let days = document.getElementById("days").value;
+    let payment = document.getElementById("paymentMethod").value;
+    let item = localStorage.getItem("itemName");
+    let price = localStorage.getItem("itemPrice");
+
+    let total = days * price;
+
+    let order = {
+        name,
+        item,
+        days,
+        payment,
+        total
     };
 
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
     orders.push(order);
     localStorage.setItem("orders", JSON.stringify(orders));
 
-    window.location.href = "confirmation.html";
+    window.location.href="confirm.html";
 }
 
-function loadOrders() {
+if(document.getElementById("bookingList")){
     let orders = JSON.parse(localStorage.getItem("orders")) || [];
-    let table = document.getElementById("ordersTable");
+    let list = document.getElementById("bookingList");
 
     orders.forEach(order => {
-        table.innerHTML += `
-        <tr>
-            <td>${order.user}</td>
-            <td>${order.item}</td>
-            <td>₹${order.price}</td>
-            <td>${order.date}</td>
-        </tr>`;
+        list.innerHTML += `
+            <div class="order-card">
+                <h3>${order.name}</h3>
+                <p>Item: ${order.item}</p>
+                <p>Days: ${order.days}</p>
+                <p>Payment: ${order.payment}</p>
+                <p>Total: ₹${order.total}</p>
+            </div>
+        `;
     });
 }

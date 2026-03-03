@@ -6,44 +6,71 @@
 </head>
 <body>
 
-<header>
-    <h1>Available Items</h1>
-    <nav>
-        <a href="index.html">Home</a>
-    </nav>
-</header>
+<h1 class="center">Available Items</h1>
 
-<div class="products">
+<div class="items-container">
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04">
+    <div class="item-card">
+        <img src="images/calculator.png">
         <h3>Scientific Calculator</h3>
-        <p>₹20/day</p>
-        <button onclick="selectItem('Scientific Calculator',20)">Rent</button>
-    </div>
-
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1581091870627-3c3d4e7d8a6b">
-        <h3>White Lab Coat</h3>
         <p>₹30/day</p>
-        <button onclick="selectItem('White Lab Coat',30)">Rent</button>
+        <button onclick="bookItem('Scientific Calculator',30)">Book Now</button>
     </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+    <div class="item-card">
+        <img src="images/white_apron.png">
+        <h3>White Lab Apron</h3>
+        <p>₹20/day</p>
+        <button onclick="bookItem('White Lab Apron',20)">Book Now</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/khaki_apron.png">
+        <h3>Khaki Lab Apron</h3>
+        <p>₹20/day</p>
+        <button onclick="bookItem('Khaki Lab Apron',20)">Book Now</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/drafter.png">
+        <h3>Drafter</h3>
+        <p>₹40/day</p>
+        <button onclick="bookItem('Drafter',40)">Book Now</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/racket.png">
         <h3>Badminton Racket</h3>
-        <p>₹35/day</p>
-        <button onclick="selectItem('Badminton Racket',35)">Rent</button>
+        <p>₹50/day</p>
+        <button onclick="bookItem('Badminton Racket',50)">Book Now</button>
     </div>
 
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1606925797303-5d65d5d3f5e5">
+    <div class="item-card">
+        <img src="images/shuttle.png">
+        <h3>Shuttle</h3>
+        <p>₹15/day</p>
+        <button onclick="bookItem('Shuttle',15)">Book Now</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/bat.png">
         <h3>Cricket Bat</h3>
-        <p>₹50/day</p>
-        <button onclick="selectItem('Cricket Bat',50)">Rent</button>
+        <p>₹60/day</p>
+        <button onclick="bookItem('Cricket Bat',60)">Book Now</button>
+    </div>
+
+    <div class="item-card">
+        <img src="images/ball.png">
+        <h3>Cricket Ball</h3>
+        <p>₹20/day</p>
+        <button onclick="bookItem('Cricket Ball',20)">Book Now</button>
     </div>
 
 </div>
+
+<footer>
+    Designed by Srishitha
+</footer>
 
 <script src="script.js"></script>
 </body>

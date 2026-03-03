@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Booking - RentEasy</title>
+    <title>Booking</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <h1>Complete Booking</h1>
-</header>
+<h1 class="center">Booking Details</h1>
 
-<div class="form-container">
-    <h3 id="selectedItem"></h3>
-    <input type="text" id="username" placeholder="Enter Your Name">
-    <button onclick="placeOrder()">Confirm Booking</button>
+<div class="booking-container">
+
+    <p id="itemName"></p>
+    <p id="itemPrice"></p>
+
+    <input type="text" id="customerName" placeholder="Your Name" required>
+    <input type="number" id="days" placeholder="Number of Days" required>
+
+    <h3>Payment Method</h3>
+    <select id="paymentMethod">
+        <option>UPI</option>
+        <option>Credit Card</option>
+        <option>Cash</option>
+    </select>
+
+    <button onclick="confirmBooking()">Confirm Booking</button>
+
 </div>
 
-<script src="script.js"></script>
-<script>
-document.getElementById("selectedItem").innerText =
-"Item: " + localStorage.getItem("item") +
-" | Price: ₹" + localStorage.getItem("price") + "/day";
-</script>
+<footer>
+    Designed by Srishitha
+</footer>
 
+<script src="script.js"></script>
 </body>
 </html>

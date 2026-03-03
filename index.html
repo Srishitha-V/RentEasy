@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RentEasy</title>
+    <title>RentEasy - Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="login-body">
 
-<header>
+<div class="login-container">
     <h1>RentEasy</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="items.html">Items</a>
-        <a href="bookings.html">Admin</a>
-    </nav>
-</header>
+    <h3>Login to Continue</h3>
 
-<section class="hero">
-    <h2>Smart Rentals for Students & Sports Lovers</h2>
-    <p>Scientific tools, Lab essentials & Sports equipment at affordable prices.</p>
-    <a href="items.html" class="btn">Explore Items</a>
-</section>
+    <input type="text" id="username" placeholder="Enter Username" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+
+    <button onclick="login()">Login</button>
+</div>
 
 <footer>
-    <p>© 2026 RentEasy | Designed by You 🚀</p>
+    Designed by Srishitha
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
