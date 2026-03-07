@@ -1,113 +1,325 @@
-body{
-    margin:0;
-    font-family:Segoe UI;
-    text-align:center;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
 }
 
 /* HOME PAGE */
-.home-page{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+.home-page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.home-container{
-    background:white;
-    padding:50px;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+.home-container {
+    background: white;
+    padding: 60px 80px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    text-align: center;
 }
 
-.home-container button{
-    padding:12px 25px;
-    background:#ff4b5c;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.home-container h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+.home-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.home-container button {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.home-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
 }
 
 /* ITEMS PAGE */
-.items-page{
-    background:linear-gradient(135deg,#36d1dc,#5b86e5);
-    padding-bottom:50px;
+.items-page {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    padding-bottom: 50px;
 }
 
-.page-title{
-    padding-top:30px;
-    color:white;
+.page-title {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 0;
 }
 
-.items-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    padding:30px;
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 30px 50px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.item-card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.item-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.item-card img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    border-radius:10px;
+.item-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
-.item-card button{
-    padding:8px 15px;
-    background:#667eea;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.item-card .image-container {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.item-card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.item-card h3 {
+    color: #333;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+
+.item-card .price {
+    color: #667eea;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 5px 0 15px 0;
+}
+
+.item-card button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.item-card button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
 }
 
 /* BOOKING PAGE */
-.booking-page{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#667eea,#764ba2);
+.booking-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 20px;
 }
 
-.booking-box{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    width:350px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+.booking-box {
+    background: white;
+    padding: 50px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.booking-box h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.booking-box .item-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.booking-box label {
+    display: block;
+    text-align: left;
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .booking-box input,
-.booking-box select{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
+.booking-box select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-.booking-box button{
-    width:100%;
-    padding:12px;
-    background:#764ba2;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
+.booking-box input:focus,
+.booking-box select:focus {
+    outline: none;
+    border-color: #667eea;
 }
 
-.success-message{
-    margin-top:15px;
-    color:green;
-    font-weight:bold;
+.booking-box button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
 }
+
+.booking-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+.success-message {
+    margin-top: 20px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 15px;
+    background: #d4edda;
+    border-radius: 10px;
+}
+
+/* BOOKINGS PAGE */
+.bookings-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    padding: 40px 20px;
+}
+
+.bookings-page h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bookings-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.booking-card h3 {
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.booking-card p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.booking-card .total {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Back Button */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: white;
+    color: #333;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    z-index: 1000;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .items-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .home-container {
+        padding: 40px;
+        margin: 20px;
+    }
+
+    .booking-box {
+        padding: 30px;
+    }
+}
+
