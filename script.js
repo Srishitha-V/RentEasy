@@ -2,6 +2,16 @@ function goToItems(){
     window.location.href="items.html";
 }
 
+function checkAndGoToItems(){
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if(!isLoggedIn){
+        alert("Please login first to view items!");
+        window.location.href = "login.html";
+    } else {
+        window.location.href = "items.html";
+    }
+}
+
 function goToLogin(){
     window.location.href="login.html";
 }
