@@ -63,9 +63,9 @@
             window.location.href = "login.html";
         }
         
-        // Also trigger toggleTimings on page load in case days is pre-filled
+        // Also trigger toggleTimings on page load in case days is pre-filled (1-3)
         const daysInput = document.getElementById("days");
-        if(daysInput && daysInput.value > 3){
+        if(daysInput && daysInput.value >= 1 && daysInput.value <= 3){
             document.getElementById("timingsSection").style.display = "block";
         }
     });

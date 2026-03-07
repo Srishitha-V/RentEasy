@@ -65,7 +65,7 @@ function confirmBooking(){
         return;
     }
 
-    // Check if timing section is visible (when days > 3)
+// Check if timing section is visible (when days = 1, 2 or 3)
     let timingsSection = document.getElementById("timingsSection");
     if(timingsSection && timingsSection.style.display !== "none"){
         let startTime = document.getElementById("startTime").value;
@@ -85,7 +85,8 @@ function toggleTimings(){
     let days = document.getElementById("days").value;
     let timingsSection = document.getElementById("timingsSection");
     
-    if(days > 3){
+    // Show timing section for 1-3 days (timings become mandatory)
+    if(days >= 1 && days <= 3){
         timingsSection.style.display = "block";
     } else {
         timingsSection.style.display = "none";
