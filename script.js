@@ -61,4 +61,41 @@ function validateLogin(event){
     }
 }
 
-
+// Set up validations when page loads
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Validate days input - max 10
+    const daysInput = document.getElementById("days");
+    if(daysInput){
+        daysInput.addEventListener("input", function() {
+            let days = parseInt(this.value);
+            if(days > 10){
+                alert("Maximum allowed days is 10. Please enter a value between 1 and 10.");
+                this.value = 10;
+            }
+            if(days < 1 || isNaN(days)){
+                this.value = "";
+            }
+            toggleTimings();
+        });
+    }
+    
+    // Validate date - cannot be in the past
+    const dateInput = document.getElementById("bookingDate");
+    if(dateInput){
+        // Set min date to today
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+        
+        dateInput.addEventListener("change", function() {
+            const selectedDate = new Date(this.value);
+            const todayDate = new Date();
+            todayDate.setHours(0,0,0,0);
+            
+            if(selectedDate < todayDate){
+                alert("You cannot select a past date. Please select today or a future date.");
+                this.value = "";
+            }
+        });
+    }
+});

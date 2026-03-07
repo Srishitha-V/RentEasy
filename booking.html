@@ -22,10 +22,10 @@
     <input type="text" id="customerName" placeholder="Enter Your Name">
 
     <label for="bookingDate">Select Booking Date</label>
-    <input type="date" id="bookingDate" onchange="validateDate()">
+    <input type="date" id="bookingDate">
 
     <label for="days">Number of Days (Max 10 days)</label>
-    <input type="number" id="days" placeholder="Enter number of days" min="1" max="10" onchange="validateDays()">
+    <input type="number" id="days" placeholder="Enter number of days" min="1" max="10">
 
     <div id="timingsSection" style="display: none;">
         <label for="startTime">From Time</label>
@@ -50,40 +50,5 @@
 </div>
 
 <script src="script.js"></script>
-<script>
-    // Set minimum date to today
-    const dateInput = document.getElementById('bookingDate');
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.setAttribute('min', today);
-
-    function validateDate(){
-        const selectedDate = new Date(document.getElementById('bookingDate').value);
-        const todayDate = new Date();
-        todayDate.setHours(0,0,0,0);
-        
-        if(selectedDate < todayDate){
-            alert("You cannot select a past date. Please select today or a future date.");
-            document.getElementById('bookingDate').value = '';
-        }
-    }
-
-    function validateDays(){
-        const daysInput = document.getElementById('days');
-        let days = parseInt(daysInput.value);
-        
-        if(days > 10){
-            alert("Maximum allowed days is 10. Please enter a value between 1 and 10.");
-            daysInput.value = 10;
-        }
-        
-        if(days < 1 || isNaN(days)){
-            daysInput.value = 1;
-        }
-        
-        toggleTimings();
-    }
-</script>
 </body>
 </html>
-
-
