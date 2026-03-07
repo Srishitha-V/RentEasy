@@ -19,7 +19,7 @@ function goToLogin(){
 function logout(){
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userRollNo");
-    window.location.href="index.html";
+    window.location.href="login.html";
 }
 
 function bookItem(name, price){
