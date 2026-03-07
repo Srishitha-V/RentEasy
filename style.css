@@ -97,46 +97,46 @@ body {
 
 .item-card .image-container {
     width: 100%;
-    height: 180px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 15px;
-    padding: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+    border-radius: 12px;
+    padding: 10px;
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
 .item-card img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 .item-card h3 {
     color: #333;
     margin: 10px 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    min-height: 30px;
 }
 
 .item-card .price {
     color: #667eea;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin: 5px 0 15px 0;
 }
 
 .item-card button {
-    padding: 12px 30px;
+    padding: 10px 25px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     transition: transform 0.2s, box-shadow 0.2s;
     width: 100%;
@@ -295,6 +295,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
     z-index: 1000;
+    text-decoration: none;
 }
 
 .back-btn:hover {
