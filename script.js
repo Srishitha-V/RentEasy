@@ -65,6 +65,18 @@ function confirmBooking(){
         return;
     }
 
+    // Check if timing section is visible (when days > 3)
+    let timingsSection = document.getElementById("timingsSection");
+    if(timingsSection && timingsSection.style.display !== "none"){
+        let startTime = document.getElementById("startTime").value;
+        let endTime = document.getElementById("endTime").value;
+        
+        if(startTime === "" || endTime === ""){
+            alert("Please fill in both start time and end time!");
+            return;
+        }
+    }
+
     document.getElementById("successMessage").innerText = 
         "🎉 Order Successful! Thanks for booking!";
 }
