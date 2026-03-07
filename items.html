@@ -62,10 +62,17 @@
         <button onclick="bookItem('Drafter',35)">Book Now</button>
     </div>
 
-</div>
-
 <script src="script.js"></script>
+<script>
+    // Hide logout button if not logged in
+    document.addEventListener("DOMContentLoaded", function() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const logoutBtn = document.querySelector(".logout-btn");
+        
+        if(!isLoggedIn){
+            logoutBtn.style.display = "none";
+        }
+    });
+</script>
 </body>
 </html>
-
-

@@ -50,5 +50,19 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+    // Check login and hide/show logout button
+    document.addEventListener("DOMContentLoaded", function() {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+        const logoutBtn = document.querySelector(".logout-btn");
+        
+        if(!isLoggedIn){
+            logoutBtn.style.display = "none";
+            // Redirect to login if not logged in
+            alert("Please login first to book an item!");
+            window.location.href = "login.html";
+        }
+    });
+</script>
 </body>
 </html>

@@ -7,10 +7,21 @@ function goToLogin(){
 }
 
 function logout(){
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userRollNo");
     window.location.href="index.html";
 }
 
 function bookItem(name, price){
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    
+    if(!isLoggedIn){
+        alert("Please login first to book an item!");
+        window.location.href = "login.html";
+        return;
+    }
+    
     localStorage.setItem("itemName", name);
     localStorage.setItem("itemPrice", price);
     window.location.href="booking.html";
@@ -25,6 +36,14 @@ if(document.getElementById("itemName")){
 }
 
 function confirmBooking(){
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    
+    if(!isLoggedIn){
+        alert("Please login first to confirm your booking!");
+        window.location.href = "login.html";
+        return;
+    }
 
     let name = document.getElementById("customerName").value;
     let date = document.getElementById("bookingDate").value;
@@ -57,6 +76,9 @@ function validateLogin(event){
     let password = document.getElementById("password").value;
     
     if(rollno && password){
+        // Set login flag
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("userRollNo", rollno);
         window.location.href = "items.html";
     }
 }
